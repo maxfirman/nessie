@@ -66,7 +66,7 @@ spec:
             {{- end }}
             {{- end }}
 
-            {{- if or (eq .Values.versionStoreType "DYNAMODB") (eq .Values.versionStoreType "DYNAMO") }}
+            {{- if eq .Values.versionStoreType "DYNAMO" }}
             {{- if .Values.dynamodb.region }}
             - name: AWS_REGION
               value: {{ .Values.dynamodb.region }}
